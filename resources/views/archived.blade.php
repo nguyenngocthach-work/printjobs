@@ -16,10 +16,10 @@
                         <th width="10%" align="center">Lagerort</th>
                         <th width="5%" align="center">Angekommen</th>
                     </tr>
-                    @if( !empty($archived))
+                    @if( !empty($archived[0]))
 
                         @foreach($archived  as $archive)
-                            @if($archive['parent_id']==0 && !empty($archive['subjob'][0]) )
+                            @if($archive['parent_id'] == 0 && !empty($archive['subjob'][0]) )
                                 <tr class="pt-1" style="color:#fff; background-color: #717170; height: 30px; border-style:solid; border-color: #fff;" >
                                     <td align="center">{{ $archive['order_number'] }}</td>
                                     <td>{{ $archive['customer'] }}</td>
@@ -60,7 +60,7 @@
 
                 </table>
             </div>
-            <div class="pt-4 ">{{parentJobs->links()}}</div>
+            <div class="pt-4">{{$archives->links()}}</div>
         </div>
     </div>
 @endsection
